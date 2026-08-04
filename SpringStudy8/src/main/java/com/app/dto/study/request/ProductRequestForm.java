@@ -1,5 +1,8 @@
 package com.app.dto.study.request;
 
+import lombok.Data;
+
+@Data
 public class ProductRequestForm {
 
 	public String id;
@@ -38,6 +41,6 @@ public class ProductRequestForm {
 //	public String toString() {
 //		return "ProductRequestForm [id=" + id + ", name=" + name + ", price=" + price + ", type=" + type + "]";
 //	}
-	
+//	
 	
 }
