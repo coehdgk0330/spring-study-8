@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>상품 A 정보 페이지</h1>
+	<p>listTest?</p>
 </body>
 </html>
