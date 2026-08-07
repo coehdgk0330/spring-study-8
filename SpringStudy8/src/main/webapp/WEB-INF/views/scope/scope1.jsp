@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>request scope</h1>
+	
+	<p>${msg1}</p>
+	<p>${msg2}</p>
+	
+	<p>${requestscope.msg1}</p>
+	<p>${requestscope.msg2}</p>
+</body>
+</html>
