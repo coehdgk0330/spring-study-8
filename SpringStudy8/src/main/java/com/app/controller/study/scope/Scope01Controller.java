@@ -53,6 +53,7 @@ public class Scope01Controller {
 		
 		session.removeAttribute("sessionMsg");
 		
+		session.invalidate(); //세션 초기화   ->  기존 session scope 모든 키값 삭제
 		return "scope/scope3";
 	}
 	
