@@ -9,8 +9,9 @@
 <body>
 	<p>FromA</p>
 	<p>OriginalA</p>
-	<p>${sessionScope.fromb}</p>
+
+<%-- 	<p>${sessionScope.fromB}</p> --%>
 	
-	
+	<p>${fromB}</p>
 </body>
 </html>
