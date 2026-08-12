@@ -13,7 +13,7 @@ import com.app.dto.room.Room;
 
 //DAO Repository
 
-//@Repository
+@Repository
 public class RoomDAOImpl implements RoomDAO {
 
 	@Override

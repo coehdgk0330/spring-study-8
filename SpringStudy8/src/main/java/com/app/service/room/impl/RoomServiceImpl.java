@@ -16,7 +16,7 @@ public class RoomServiceImpl implements RoomService {
 
 	@Autowired  //자동주입
 	RoomDAO roomDAO;
-
+	
 	
 	//생성자를 통한 의존성 주입
 //	public RoomServiceImpl(RoomDAO roomDAO) {
@@ -32,16 +32,16 @@ public class RoomServiceImpl implements RoomService {
 	public List<Room> findRoomList() {
 
 		System.out.println("RoomServiceImpl findRoomList");
-
+		
 		//핵심 비즈니스 로직  | 서비스 로직
-
+		
 		//전체호실정보 조회 
-
+		
 		// DAO 활용(호출) ->  실제 DB에서 데이터 조회해서 달라!
 		List<Room> roomList = roomDAO.findRoomList();
-
+		
 		return roomList;
 	}
-
-
+	
+	
 }

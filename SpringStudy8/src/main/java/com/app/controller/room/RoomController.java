@@ -12,9 +12,10 @@ import com.app.service.room.RoomService;
 
 @Controller
 public class RoomController {
-	
-	@Autowired
+
+	@Autowired  //의존성 주입
 	RoomService roomService;
+	//스프링이 객체를 관리 -> RoomService 객체를 주입받아서 사용
 	
 	
 	// 보유한 모든 호실정보 조회 페이지
@@ -24,9 +25,11 @@ public class RoomController {
 		System.out.println("[Controller] /rooms 호출");
 		
 		//호실정보
-		//Controller -> Service -> DAO <-> DB
+		//Controller -> Service -> DAO  <-> DB
 		
 		List<Room> roomList = roomService.findRoomList();
+		
+		
 		
 		// view 에 호실목록 전달
 		model.addAttribute("roomList", roomList);
