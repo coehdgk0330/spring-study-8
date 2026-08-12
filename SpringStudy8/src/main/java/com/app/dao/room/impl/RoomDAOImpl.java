@@ -13,18 +13,16 @@ import com.app.dto.room.Room;
 
 //DAO Repository
 
-@Repository
+//@Repository
 public class RoomDAOImpl implements RoomDAO {
-	
-	
 
 	@Override
 	public List<Room> findRoomList() {
 
 		System.out.println("RoomDAOImpl findRoomList");
 		// DB 연동 -> room 테이블 데이터 조회 -> List<Room>
-		
-		//return
+
+		// return
 		return null;
 	}
 
