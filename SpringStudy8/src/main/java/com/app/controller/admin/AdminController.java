@@ -13,33 +13,28 @@ import com.app.service.room.RoomService;
 public class AdminController {
 	//관리자 접근 페이지   (전체 관리자) or (판매자측/호텔측 사용자)
 	//			운영회사측 전체관리자
-	
+
 	@Autowired
 	RoomService roomService;
-	
+
 	@GetMapping("/admin/registerRoom")
 	public String registerRoom() {
 		return "admin/registerRoom";
 	}
-	
+
 	@PostMapping("/admin/registerRoom")
 	public String registerRoomAction(@ModelAttribute Room room) {
-		
+
 		//화면으로부터 입력한 값이 잘 넘어왔는지 체크
 		System.out.println(room); 
-		
+
 		int result = roomService.saveRoom(room);
+
 		
 		// result 값 확인 -> 성공/실패 -> 진행
-		
+		System.out.println("insert 처리 결과 리턴받은 적용된 행의 수: " +  result);
+
 		return "admin/registerRoom";
-		
+
 	}
 }
-
-
-
-
-
-
-
