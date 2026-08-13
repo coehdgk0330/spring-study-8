@@ -32,5 +32,8 @@
 	
 
 
-	
+	<delete id="removeRoom" parameterType="int"	>
+		Delete FROM T_ROOM
+		WHERE room_id = #{roomId}
+	</delete>
 </mapper>
