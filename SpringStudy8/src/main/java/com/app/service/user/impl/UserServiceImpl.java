@@ -13,23 +13,21 @@ import com.app.service.user.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
-	private final CoffeeBean coffeeBean;
+
+    private final CoffeeBean coffeeBean;
 
 	@Autowired
 	UserDAO userDAO;
-	
-	 UserServiceImpl(CoffeeBean coffeeBean) {
-	        this.coffeeBean = coffeeBean;
-	    }
 
-
+    UserServiceImpl(CoffeeBean coffeeBean) {
+        this.coffeeBean = coffeeBean;
+    }
 
 	@Override
 	public int saveUser(User user) {
 
 		int result = userDAO.saveUser(user);
-		
+
 		return result;
 	}
 
@@ -40,9 +38,10 @@ public class UserServiceImpl implements UserService {
 		//고객계정으로 추가!
 		//user.setUserType("CUS");
 		user.setUserType( CommonCode.USER_USERTYPE_CUSTOMER );
-		
+
+
 		int result = userDAO.saveUser(user);
-		
+
 		return result;
 	}
 
@@ -52,26 +51,31 @@ public class UserServiceImpl implements UserService {
 		//관리자계정으로 추가!
 		//user.setUserType("ADM");
 		user.setUserType( CommonCode.USER_USERTYPE_ADMIN );
-		
+
 		int result = userDAO.saveUser(user);
-		
+
 		return result;
 	}
 
 	@Override
 	public List<User> findUserList() {
+
 		List<User> userList = userDAO.findUserList();
-		
+
 		return userList;
 	}
-	
+
 	@Override
 	public User checkUserLogin(User user) {
-		
+
 		// 사용자 id pw  <-->  DB에 있는 계정정보 일치?
 
 		// 해당 id로 DB에서 계정정보를 조회 <-> id pw 비교
+
 		
+		// 로그인 처리 케이스 1) DB에서 User 정보 조회 -> 서비스 계층에서 상태 비교 수행
+		
+		/*
 		User loginUser = userDAO.findUserById( user.getId()  );
 		
 		//if( loginUser == null ) //아이디가 없다
@@ -91,16 +95,19 @@ public class UserServiceImpl implements UserService {
 		return null;
 		
 		// 성공 or 실패시 사유   코드화    1 성공 2 비번틀렸고 3 아이디없고 4 휴면계정 5 정지
+		*/
+		
+		// 로그인 처리 케이스 2) DB 쿼리상에서 정보 일치 여부 비교 수행
+		User loginUser = userDAO.checkUserLogin(user);  // 객체 or null
+		
+		return loginUser;
 	}
 
 	@Override
 	public User findUserById(String id) {
 
 		User user = userDAO.findUserById(id);
-		
+
 		return user;
 	}
 }
-
-
-
