@@ -15,5 +15,13 @@
 	<p>
 		<a href="/main">메인페이지로 이동</a>
 	</p>
+	
+	<button id="btn modifyPw">비밀번호 변경</button>
+	
+	<script>
+		document.getElementById('btn_modifyPw').addEventLister('click',()=>{
+			location.href="/customer/modifyPw";
+		})
+	</script>
 </body>
 </html>
