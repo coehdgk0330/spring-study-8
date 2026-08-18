@@ -14,6 +14,9 @@
 		<button type="button" onclick=" goSignup() ">회원가입</button>
 	</div>
 	
+	<br>
+		<button type="button" onclick=" location.href='/customer/signin' ">로그인</button>
+	
 	<script>
 		function goSignup(){
 			location.href='/customer/signup';
