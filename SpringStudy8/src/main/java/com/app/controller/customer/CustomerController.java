@@ -2,6 +2,8 @@ package com.app.controller.customer;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +12,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.app.common.ApiCommonCode;
 import com.app.common.CommonCode;
+import com.app.controller.admin.AdminController;
 import com.app.dao.hotel.impl.HotelDAOImpl;
+import com.app.dto.api.ApiResponse;
+import com.app.dto.api.ApiResponseHeader;
 import com.app.dto.user.User;
+import com.app.dto.user.UserDupCheck;
 import com.app.service.hotel.impl.HotelServiceImpl;
 import com.app.service.user.UserService;
 import com.app.util.LoginManager;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class CustomerController {
 
@@ -27,6 +37,8 @@ public class CustomerController {
 	@Autowired
 	UserService userService;
 	// 사용자 계정정보 관련 서비스 로직
+	
+//	private static final Logger Log = LogManager.getLogger(CustomerController.class);
 
 	CustomerController(HotelDAOImpl hotelDAOImpl, HotelServiceImpl hotelServiceImpl) {
 		this.hotelDAOImpl = hotelDAOImpl;
@@ -62,6 +74,8 @@ public class CustomerController {
 		// 클라이언트가 전달한 id 값을 받아서, 이게 중복인지 아닌지 DB에서 조회 비교 -> 응답
 		System.out.println("/customer/checkDupId");
 		System.out.println(data);
+		
+		
 		
 		boolean result = userService.isDuplicatedId(data);
 		System.out.println(result);
