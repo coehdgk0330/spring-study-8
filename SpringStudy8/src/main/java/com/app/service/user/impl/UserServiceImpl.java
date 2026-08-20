@@ -147,6 +147,6 @@ public class UserServiceImpl implements UserService {
 		} else { // 해당 아이디의 user 정보가 있다 -> 중복 o
 			return true;
 		}
-		return false;
+		
 	}
 }
