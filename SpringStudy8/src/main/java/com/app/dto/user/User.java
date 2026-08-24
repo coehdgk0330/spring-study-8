@@ -9,7 +9,7 @@ import lombok.Data;
 public class User {
 	
 	
-	@NotBlank//(message = "아이디 필수임")
+	@NotBlank(message = "아이디 필수임")
 	String id;
 	
 	@Size(min = 8, max = 12, message = "비번 길이 확인(8~12)")
